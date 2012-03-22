@@ -3,7 +3,7 @@
 #include <ADXL345.h>
 
 #include <SdFat.h>
-#include <SdFatUtil.h> 
+#include <SdFatUtil.h>
 #include <ctype.h>
 
 
@@ -51,3 +51,9 @@ void loop(void)
     Serial.println("ERROR: ADXL345 data read error");
   }
 }
+
+/*
+  Local Variables:
+  mode: c++
+  End:
+*/
