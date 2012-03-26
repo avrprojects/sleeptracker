@@ -11,6 +11,7 @@ To do
 -----
 
 * write a proper README
+* port to Arduino v1.0
 * query accelerometer at a fixed frequency
 * merge write requests to decrease I/O time
 * implement RTC (with battery buffer?)
