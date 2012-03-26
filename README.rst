@@ -7,6 +7,14 @@ Hardware description
 Software description
 --------------------
 
+prerequisites (Ubuntu package names)
+-------------
+arduino-1.0
+gcc-avr
+binutils-avr
+avr-libc
+
+
 To do
 -----
 
