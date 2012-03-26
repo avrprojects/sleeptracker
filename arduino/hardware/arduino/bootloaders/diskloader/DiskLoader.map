@@ -1,0 +1,416 @@
+
+Discarded input sections
+
+ .text          0x00000000        0x0 build/./DiskLoader.o
+ .data          0x00000000        0x0 build/./DiskLoader.o
+ .bss           0x00000000        0x0 build/./DiskLoader.o
+ .text          0x00000000        0x0 build/./USBCore.o
+ .data          0x00000000        0x0 build/./USBCore.o
+ .bss           0x00000000        0x0 build/./USBCore.o
+ .text._Z4RecvPVhh
+                0x00000000       0x1a build/./USBCore.o
+ .text._Z19USBGetConfigurationv
+                0x00000000        0x6 build/./USBCore.o
+ .text._Z7HasDatah
+                0x00000000        0xc build/./USBCore.o
+ .text          0x00000000        0x0 build/./USBDesc.o
+ .data          0x00000000        0x0 build/./USBDesc.o
+ .bss           0x00000000        0x0 build/./USBDesc.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+Address of section .text set to 0x7800
+LOAD build/./DiskLoader.o
+LOAD build/./USBCore.o
+LOAD build/./USBDesc.o
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00007800      0x6f0
+ *(.vectors)
+ .vectors       0x00007800        0xe build/./DiskLoader.o
+                0x00007800                entrypoint
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x0000780e       0x18 build/./DiskLoader.o
+                0x0000780e                _readSize
+                0x0000781e                _consts
+ .progmem.data  0x00007826       0x23 build/./USBCore.o
+                0x00007826                _initEndpoints
+                0x0000782b                _rawHID
+ .progmem.data  0x00007849       0xdc build/./USBDesc.o
+                0x00007849                STRING_LANGUAGE
+                0x0000784d                STRING_IPRODUCT
+                0x00007885                STRING_IMANUFACTURER
+                0x0000789d                USB_DeviceDescriptorA
+                0x000078af                USB_DeviceDescriptor
+                0x000078c1                USB_ConfigDescriptor
+                0x00007926                . = ALIGN (0x2)
+ *fill*         0x00007925        0x1 00
+                0x00007926                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00007926        0x0 linker stubs
+ *(.trampolines*)
+                0x00007926                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00007926                __ctors_start = .
+ *(.ctors)
+                0x00007926                __ctors_end = .
+                0x00007926                __dtors_start = .
+ *(.dtors)
+                0x00007926                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ *(.init9)
+ *(.text)
+                0x00007926                . = ALIGN (0x2)
+ *(.text.*)
+ .text._Z8LEDPulsev
+                0x00007926       0x36 build/./DiskLoader.o
+                0x00007926                LEDPulse()
+ .text._Z6Rebootv
+                0x0000795c       0x16 build/./DiskLoader.o
+                0x0000795c                Reboot()
+ .text._Z7Programhth
+                0x00007972       0x80 build/./DiskLoader.o
+                0x00007972                Program(unsigned char, unsigned short, unsigned char)
+ .text.main     0x000079f2      0x152 build/./DiskLoader.o
+                0x000079f2                main
+ .text._Z7USBInitv
+                0x00007b44       0x32 build/./USBCore.o
+                0x00007b44                USBInit()
+ .text._Z4RecvhPhh
+                0x00007b76       0x34 build/./USBCore.o
+                0x00007b76                Recv(unsigned char, unsigned char*, unsigned char)
+ .text._Z8TransferhPKhi
+                0x00007baa       0x5a build/./USBCore.o
+                0x00007baa                Transfer(unsigned char, unsigned char const*, int)
+ .text._Z7USBHookv
+                0x00007c04       0x76 build/./USBCore.o
+                0x00007c04                USBHook()
+ .text._Z14SendDescriptorv
+                0x00007c7a       0xc2 build/./USBCore.o
+                0x00007c7a                SendDescriptor()
+ .text._Z17USBSetupInterruptv
+                0x00007d3c       0xe4 build/./USBCore.o
+                0x00007d3c                USBSetupInterrupt()
+ .text._Z19USBGeneralInterruptv
+                0x00007e20       0x64 build/./USBCore.o
+                0x00007e20                USBGeneralInterrupt()
+ .text._Z10USBGetCharv
+                0x00007e84       0x6c build/./USBCore.o
+                0x00007e84                USBGetChar()
+                0x00007ef0                . = ALIGN (0x2)
+ *(.fini9)
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ *(.fini0)
+                0x00007ef0                _etext = .
+
+.data           0x00800100        0x8 load address 0x00007ef0
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ *(.data*)
+ .data._ZL12_usbLineInfo
+                0x00800100        0x8 build/./USBCore.o
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800108                . = ALIGN (0x2)
+                0x00800108                _edata = .
+                0x00800108                PROVIDE (__data_end, .)
+
+.bss            0x00800108       0x93
+                0x00800108                PROVIDE (__bss_start, .)
+ *(.bss)
+ *(.bss*)
+ .bss._flashbuf
+                0x00800108       0x80 build/./DiskLoader.o
+                0x00800108                _flashbuf
+ .bss._inSync   0x00800188        0x1 build/./DiskLoader.o
+                0x00800188                _inSync
+ .bss._ok       0x00800189        0x1 build/./DiskLoader.o
+                0x00800189                _ok
+ .bss._pulse    0x0080018a        0x2 build/./DiskLoader.o
+                0x0080018a                _pulse
+ .bss.TxLEDPulse
+                0x0080018c        0x1 build/./USBCore.o
+                0x0080018c                TxLEDPulse
+ .bss.RxLEDPulse
+                0x0080018d        0x1 build/./USBCore.o
+                0x0080018d                RxLEDPulse
+ .bss._usbConfiguration
+                0x0080018e        0x1 build/./USBCore.o
+                0x0080018e                _usbConfiguration
+ .bss._ejected  0x0080018f        0x1 build/./USBCore.o
+                0x0080018f                _ejected
+ .bss._timeout  0x00800190        0x2 build/./USBCore.o
+                0x00800190                _timeout
+ .bss._setup    0x00800192        0x8 build/./USBCore.o
+                0x00800192                _setup
+ .bss._cdcComposite
+                0x0080019a        0x1 build/./USBCore.o
+                0x0080019a                _cdcComposite
+ *(COMMON)
+                0x0080019b                PROVIDE (__bss_end, .)
+                0x00007ef0                __data_load_start = LOADADDR (.data)
+                0x00007ef8                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0080019b        0x0
+                0x0080019b                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0080019b                PROVIDE (__noinit_end, .)
+                0x0080019b                _end = .
+                0x0080019b                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xb0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x40 build/./DiskLoader.o
+ .debug_aranges
+                0x00000040       0x70 build/./USBCore.o
+
+.debug_pubnames
+                0x00000000      0x27b
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x95 build/./DiskLoader.o
+ .debug_pubnames
+                0x00000095      0x147 build/./USBCore.o
+ .debug_pubnames
+                0x000001dc       0x9f build/./USBDesc.o
+
+.debug_info     0x00000000     0x1a19
+ *(.debug_info)
+ .debug_info    0x00000000      0x37c build/./DiskLoader.o
+ .debug_info    0x0000037c     0x1082 build/./USBCore.o
+ .debug_info    0x000013fe      0x61b build/./USBDesc.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x5a6
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x192 build/./DiskLoader.o
+ .debug_abbrev  0x00000192      0x37d build/./USBCore.o
+ .debug_abbrev  0x0000050f       0x97 build/./USBDesc.o
+
+.debug_line     0x00000000      0xb7e
+ *(.debug_line)
+ .debug_line    0x00000000      0x33c build/./DiskLoader.o
+ .debug_line    0x0000033c      0x7c4 build/./USBCore.o
+ .debug_line    0x00000b00       0x7e build/./USBDesc.o
+
+.debug_frame    0x00000000      0x120
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x60 build/./DiskLoader.o
+ .debug_frame   0x00000060       0xc0 build/./USBCore.o
+
+.debug_str      0x00000000      0x745
+ *(.debug_str)
+ .debug_str     0x00000000      0x171 build/./DiskLoader.o
+                                0x1b9 (size before relaxing)
+ .debug_str     0x00000171      0x5c2 build/./USBCore.o
+                                0x6e5 (size before relaxing)
+ .debug_str     0x00000733       0x12 build/./USBDesc.o
+                                0x384 (size before relaxing)
+
+.debug_loc      0x00000000      0x5c1
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x239 build/./DiskLoader.o
+ .debug_loc     0x00000239      0x388 build/./USBCore.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(DiskLoader.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000      0x1a8
+ .debug_ranges  0x00000000       0x50 build/./DiskLoader.o
+ .debug_ranges  0x00000050      0x158 build/./USBCore.o
